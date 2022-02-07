@@ -1,0 +1,23 @@
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  // gap: 1rem;
+  width: 100%;
+}
+
+.vs-icon {
+  width: 70px;
+  object-fit: contain;
+}
+@media (min-width: 1024px) {
+  .scoreboard {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+  }
+
+  .vs-icon {
+    width: 150px;
+    object-fit: contain;
+  }
+}
