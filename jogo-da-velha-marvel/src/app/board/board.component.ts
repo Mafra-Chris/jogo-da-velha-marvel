@@ -34,6 +34,7 @@ export class BoardComponent implements OnInit {
     this.squares = Array(9).fill(null)
     this.winner = null
     this.isXNext = true
+    this.velha = false
   }
 
   get player() {
@@ -76,7 +77,7 @@ export class BoardComponent implements OnInit {
       }
 
     }
-
+    console.log(this.squares)
     if (!this.squares.includes(null) && this.winner === null) {
       this.velha = true
     }
