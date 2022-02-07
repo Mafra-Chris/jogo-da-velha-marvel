@@ -1,0 +1,18 @@
+<div class="player" *ngIf="player$ | async as p">
+
+
+  <img class="player-picture" [src]="playerPicture" alt="">
+
+
+  <h1>{{ heroName }} <span class="player-type">Jogador {{playerType}}</span></h1>
+
+  <h2 *ngIf="isChosen">Vitórias: {{ playerType === 'X' ? p.xScore : p.oScore }}</h2>
+
+  <div *ngIf="!isChosen" class="search-container">
+    <div>
+      <input type="text" name="choose-character" class="search-input" #character>
+      <button class="search-btn" (click)="searchHero(character.value)">Confirmar</button>
+    </div>
+    <span class="error" *ngIf="isError">{{errorText}}</span>
+  </div>
+</div>
