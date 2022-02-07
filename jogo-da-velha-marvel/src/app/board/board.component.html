@@ -1,14 +1,28 @@
-<h1>Jogador Atual: {{ player }}</h1>
+<div *ngIf="player$ | async as p">
 
-<button (click)="beginGame()">Começar novo jogo</button>
+  <div class="score">
 
-<h2 *ngIf="winner">
-  Jogador {{ winner }} ganhou o jogo!
-</h2>
+    <h1 *ngIf="winner">
+      Jogador {{ winner }} ganhou o jogo!
+    </h1>
+    <h1 *ngIf="velha">
+      Jogo deu velha!
+    </h1>
 
-<main>
-  <app-square *ngFor="let square of squares; let i = index" [value]="square" (click)="makeMove(i)">
+  </div>
+  <div *ngIf="p.isReadyX && p.isReadyO">
 
+    <h2 *ngIf="!winner">Jogador Atual: {{ player }}</h2>
+    <button class="reset-btn" (click)="beginGame()">Começar novo jogo</button>
+    <div class="board">
 
-  </app-square>
-</main>
+      <main>
+        <app-square *ngFor="let square of squares; let i = index" [value]="square" (click)="makeMove(i)">
+        </app-square>
+      </main>
+    </div>
+  </div>
+  <h1 class="choose-text" *ngIf="!p.isReadyX || !p.isReadyO">
+    Escolha os personagens para começar
+  </h1>
+</div>

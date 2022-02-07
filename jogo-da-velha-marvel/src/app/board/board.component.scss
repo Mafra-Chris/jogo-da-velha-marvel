@@ -1,10 +1,51 @@
+$hero-red: #eb1c24;
+
 main {
   display: grid;
-  grid-template-columns: 200px 200px 200px;
-  grid-gap: 0px;
+  grid-template-columns: 90px 90px 90px;
+  grid-gap: 0.5rem;
 }
 
 app-square {
-  border: 1px gray solid;
-  height: 200px;
+  height: 90px;
+}
+
+@media (min-width: 768px) {
+  main {
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-gap: 0.5rem;
+  }
+
+  app-square {
+    height: 200px;
+  }
+}
+
+.board {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.choose-text {
+  margin-top: 5rem;
+}
+.score {
+  margin-top: 2rem;
+}
+.reset-btn {
+  margin-top: 1rem;
+  border: solid 1px $hero-red;
+  background-color: transparent;
+  border-radius: 0.375rem;
+  color: $hero-red;
+  padding: 0.5rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+@media (min-width: 1024px) {
+  .score {
+    margin-top: -2rem;
+  }
 }
