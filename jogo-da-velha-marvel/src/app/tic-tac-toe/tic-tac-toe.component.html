@@ -1,0 +1,2 @@
+<app-scoreboard [xScore]="xScore" [oScore]="oScore"></app-scoreboard>
+<app-board (xScoreEvent)="receiveXScore($event)" (oScoreEvent)="receiveOScore($event)"></app-board>
